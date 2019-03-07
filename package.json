@@ -1,0 +1,23 @@
+{
+  "name": "jeach-jds",
+  "version": "1.0.0",
+  "description": "Jeach's JSON Data Store (JDS)",
+  "main": "jds.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "jeach",
+    "jds",
+    "jeach-jds"
+  ],
+  "author": "Christian Jean",
+  "license": "MIT",
+  "dependencies": {
+    "chance": "^1.0.18",
+    "jeach-log4node": "^2.0.0",
+    "jsonfile": "^5.0.0",
+    "lodash": "^4.17.11"
+  }
+}

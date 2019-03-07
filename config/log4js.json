@@ -1,0 +1,33 @@
+{  
+  "appenders": {
+    "out": { 
+      "type": "stdout",
+      "layout": {
+        "type": "pattern",
+        "pattern": "[%d][%1.1p][%c][%M(%L)]> %m" 
+      }
+    },
+    "console": {
+      "type": "console",
+      "layout": {
+        "type": "pattern",
+        "pattern": "[%d][%1.1p][%c][%M(%L)]> %m" 
+      }      
+    },
+    "rolling-file-appender": {
+      "type": "file",
+      "filename": "logs/jeach-jds.log",
+      "maxLogSize": 1024000,
+      "numBackups": 3,
+      "compress": true,
+      "layout": {
+        "type": "pattern",
+        "pattern": "[%d][%p][%c][%M(%L)]> %m"
+      }
+    } 
+  },
+  "categories": {
+    "default":                      { "appenders": ["console"], "level": "WARN" },
+    "jeach.jds":                    { "appenders": ["console"], "level": "DEBUG" }
+  }
+}
