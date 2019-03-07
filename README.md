@@ -48,14 +48,28 @@ To create a new project:
 POST /jds/project/{name}
 ```
 
-## Disclaimer
-
-Much of what is currently code will be changed. As of now there is a notion of 'projects' which I'm not sure I like. I will probably change it to something more 'key' / 'value' based. Exposing the following API's instead:
+## Intent (todo)
 
 ```
-POST    /jds/key/{key}
-GET     /jds/key/{key}
-DELETE  /jds/key/{key}
+POST    /jds/project/data/{key}
+GET     /jds/project/data/{key}
+DELETE  /jds/project/data/{key}
 ```
 
-The above essentially allows one to store, fetch or delte any data associated with the `{key}` (on the server). The data associated with a `key` can be any regular JSON data-structure.
+The above essentially allows one to create a store (POST), fetch (GET) or delete (DELETE) data associated with the `key` provided. The data can be any regular JSON data-structure.
+
+In order for one to load meta-data for a given project, they could do so with:
+
+```
+GET     /jds/project/info/{key}
+```
+
+Which would provide the project `uuidd`, `key` (or name), creation date, last update date, number of backup files, current version number and a few more things.
+
+Should someone want to load a previous version of the data, they could do so with:
+
+```
+GET    /jds/project/data/{key}/{version}
+```
+
+Where `version` is a sequence number, such as 2, 9, 22 or 105. Just remember that only a few backups are kept (default is 5). So requesting a purged backup data would return an error.
