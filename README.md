@@ -6,50 +6,19 @@ Very similar in nature to the HTML5 `localStore` and `sessionStore`, except that
 
 **Warning:** This code is experimental and only work in progress. Some functionalities have not yet been implemented! And the current code is in a state of 'limbo', meaning that it was used for something else, brought in to do this project and assembled quickly without too much though. A design will be put together and the code eventually cleaned up.
 
-## Usage
+## Intent (todo)
 
-If you want to use the API programmatically, you can do so as follows:
+In order to expose the RESTful API, you would simply invoke the following three lines of code:
 
-```
-const jds = require('jeach-jds');
-
-const foo = jds.getProject("foo");      // Previously created and saved
-const bar = jds.createProject("bar");   // Create a new project and return it
-
-var data1 = { x: 1, y: true, z: 'some value' };
-var data2 = [ { one: 1, two: 2 }, { three: 3, four: 4 } ];
-
-jds.saveData(foo, data1);
-jds.saveData(bar, data2);
-```
-
-In the above example, data is saved for each project.
-
-Should you want to expose this same logic to your client, you can simply do:
 
 ```
 const jds = require('jeach-jds');
-
 const routes = jds.getRoutes();
 
 app.get('/jds', routes);
 ```
 
-And the above routes would be provided, allowing a client to make the following calls...
-
-To get the data for a given project:
-
-```
-GET /jds/project/{name}
-```
-
-To create a new project:
-
-```
-POST /jds/project/{name}
-```
-
-## Intent (todo)
+Once the Node.js server started and the routes exposed, one could simply make the following calls from the client-side:
 
 ```
 POST    /jds/project/{key}
