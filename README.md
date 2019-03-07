@@ -51,9 +51,9 @@ POST /jds/project/{name}
 ## Intent (todo)
 
 ```
-POST    /jds/project/data/{key}
-GET     /jds/project/data/{key}
-DELETE  /jds/project/data/{key}
+POST    /jds/project/{key}
+GET     /jds/project/{key}
+DELETE  /jds/project/{key}
 ```
 
 The above essentially allows one to create a store (POST), fetch (GET) or delete (DELETE) data associated with the `key` provided. The data can be any regular JSON data-structure.
@@ -61,7 +61,7 @@ The above essentially allows one to create a store (POST), fetch (GET) or delete
 In order for one to load meta-data for a given project, they could do so with:
 
 ```
-GET     /jds/project/info/{key}
+GET     /jds/project/{key}/info
 ```
 
 Which would provide the project `uuidd`, `key` (or name), creation date, last update date, number of backup files, current version number and a few more things.
@@ -69,7 +69,7 @@ Which would provide the project `uuidd`, `key` (or name), creation date, last up
 Should someone want to load a previous version of the data, they could do so with:
 
 ```
-GET    /jds/project/data/{key}/{version}
+GET    /jds/project/{key}/{version}
 ```
 
 Where `version` is a sequence number, such as 2, 9, 22 or 105. Just remember that only a few backups are kept (default is 5). So requesting a purged backup data would return an error.
