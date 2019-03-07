@@ -3,7 +3,7 @@
 Jeach JDS is a simple JSON Data Store project for Node.js and web clients. 
 Very similar in nature to the HTML5 `localStore` and `sessionStore`, except that instead of saving client-side, it provides support for server-side (and backups).
 
-**Warning:** This code is experimental and only work in progress. Some functionalities have not yet been implemented!
+**Warning:** This code is experimental and only work in progress. Some functionalities have not yet been implemented! And the current code is in a state of 'limbo', meaning that it was used for something else, brought in to do this project and assembled quickly without too much though. A design will be put together and the code eventually cleaned up.
 
 ## Usage
 
